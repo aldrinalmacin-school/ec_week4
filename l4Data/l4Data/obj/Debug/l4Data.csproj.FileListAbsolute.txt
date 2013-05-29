@@ -1,0 +1,5 @@
+G:\Enterprise Computing\Class 4\l4Data\l4Data\bin\l4Data.dll
+G:\Enterprise Computing\Class 4\l4Data\l4Data\bin\l4Data.pdb
+G:\Enterprise Computing\Class 4\l4Data\l4Data\obj\Debug\ResolveAssemblyReference.cache
+G:\Enterprise Computing\Class 4\l4Data\l4Data\obj\Debug\l4Data.dll
+G:\Enterprise Computing\Class 4\l4Data\l4Data\obj\Debug\l4Data.pdb
