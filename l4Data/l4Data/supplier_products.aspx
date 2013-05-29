@@ -6,15 +6,19 @@
         ConnectionString="<%$ ConnectionStrings:strConn %>" 
         ProviderName="<%$ ConnectionStrings:strConn.ProviderName %>" 
         SelectCommand="SELECT SupplierID, CompanyName FROM Suppliers ORDER BY CompanyName"></asp:SqlDataSource>
-
-    <asp:DropDownList ID="ddlSupliers" runat="server" 
+    Choose a supplier:
+    <asp:DropDownList ID="ddlSuppliers" runat="server" 
         DataSourceID="SqlDataSource1" DataTextField="CompanyName" 
-        DataValueField="SupplierID">
+        DataValueField="SupplierID" AutoPostBack="true">
     </asp:DropDownList>
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
         ConnectionString="<%$ ConnectionStrings:strConn %>" 
         ProviderName="<%$ ConnectionStrings:strConn.ProviderName %>" 
-        SelectCommand="SELECT ProductID, ProductName, UnitPrice FROM Products ORDER BY ProductName"></asp:SqlDataSource>
+        SelectCommand="SELECT ProductID, ProductName, UnitPrice FROM Products WHERE SupplierID=@SupplierID ORDER BY ProductName">
+        <SelectParameters>
+            <asp:ControlParameter Name="SupplierID" Type="Int32" ControlID="ddlSuppliers" PropertyName="SelectedValue" />
+        </SelectParameters>
+    </asp:SqlDataSource>
     <asp:GridView ID="gvProducts" runat="server" AllowPaging="True" 
         AllowSorting="True" DataSourceID="SqlDataSource2" 
         AutoGenerateColumns="False">
